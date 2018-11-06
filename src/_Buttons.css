@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
+
+.button-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+button {
+  background-color: white;
+  border: solid 3px #ff8c8f;
+  border-radius: 10px;
+  padding: 0px 15px;
+  font-size: 1.3rem;
+  font-family: 'Patrick Hand', Arial, Sans-serif;
+  color: rgb(24, 23, 23);
+  font-weight: bold;
+  transition: background-color .4s linear;
+  transition: color .4s linear;
+  transition: transform .4s linear;
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+  background-color: #8f8cff;
+  color: white;
+}
+
+button:focus {
+  outline: none;
+}
