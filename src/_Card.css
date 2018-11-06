@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
+.card {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hidden {
+  display: none;
+}
+
+.card-btn {
+  display: block;
+  margin: 0 10px;
+}
+
+.prompt {
+  color: #525252;
+  margin: 2px 5px;
+  font-size: 34px;
+  line-height: 1.55;
+}
+
+.answer {
+  display: block;
+  font-size: 1.3rem;
+  margin: 19px 4px;
+  color: #525252;
+}
+
+.current-card {
+  transition: 0.3s;
+  font-family: 'Patrick Hand', Arial, Sans-Serif;
+  background-image: url('./index-img.png');
+  background-size: contain;
+  border: solid grey 5px;
+  border-radius: 10px;
+  width: 600px;
+  height: 300px;
+  margin: 190px auto;
+  position: relative;
+  padding: 10px;
+  box-shadow: 0px 10px 20px 5px black;
+  word-wrap: break-word;
+}
+
+.correct-answer {
+  transition: 0.3s;
+  border: 6px solid lime;
+  transform: scale(1.05);
+}
+
+.incorrect-answer {
+  border: 5px solid red;
+  animation: shake 0.52s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(5px, 0, 0);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: scale(1.0);
+    left: 0px;
+    bottom: 0px;
+  }
+
+  25% {
+    transform: scale(0.75);
+    left: 160px;
+    bottom: 92.5px;
+  }
+
+  50% {
+    transform: scale(0.5);
+    left: 320px;
+    bottom: 185px;
+  }
+
+  75% {
+    transform: scale(0.25);
+    left: 480px;
+    bottom: 277.5px;
+  }
+
+  100% {
+    transform: scale(0);
+    left: 640px;
+    bottom: 370px;
+  }
+}
+
+.saved-answer {
+  border-color: rgb(0, 217, 255);
+}
+
+.slide-saved {
+  animation: slide 0.8s linear;
+  position: relative;
+}
+
+.card-btn-div {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  margin: 5px 10px;
+  left: -2px;
+  bottom: 4px;
+}
+
+.card-btn {
+  border: solid 3px #ff8c8f;
+  border-radius: 10px;
+  font-family: 'Patrick Hand', Arial, Sans-Serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #525252;
+  transition: background-color .4s linear;
+  transition: color .4s linear;
+  transition: transform .4s linear;
+  line-height: 110%;
+}
+
+.card-btn:hover {
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+  box-shadow: 2px 2px 2px 1px grey;
+}
+
+.correct-btn {
+  border-color: rgb(0, 255, 0);
+}
+
+.correct-btn:hover {
+  background-color: rgb(0, 255, 0);
+  color: black;
+}
+
+.incorrect-btn {
+  border-color: red;
+}
+
+.incorrect-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+.save-card-btn {
+  border-color: rgb(0, 217, 255);
+}
+
+.save-card-btn:hover {
+  background-color: rgb(0, 217, 255);
+  color: white;
+
+  
+.splash {
+  transition: .3s;
+  font-size: 5rem;
+  color: white;
+  font-family: 'Patrick Hand', Arial, Sans-serif;
+  margin: 500px 0 0 0;
+}
+
+.delete-card-btn {
+  border-color: black;
+  color: black;
+}
+
+.delete-card-btn:hover {
+  background-color: black;
+}
+
+.delete {
+  border-color: black;
+  transition: .5s;
+  transform: scale(0);
+}
