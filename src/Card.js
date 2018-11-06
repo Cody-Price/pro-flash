@@ -21,7 +21,21 @@ export default class Card extends Component {
             <button onClick={this.props.deleteSavedCard} className="delete-card-btn card-btn" title="Removes the card from your 'My Saved Questions' stack">Unsave</button>
           </div>
         </div>
-      : <div className="splash">Pick a category!</div> }
+      : null }
+      {this.props.showForm ? 
+        <div className="form-div">
+          <form>
+            <label value="question">Question: </label>
+            <input type="text" id="prompt-form" required maxLength="100"></input>
+            <label value="question">Answer: </label>
+            <input type="text" id="answer-form" required maxLength="250"></input>
+          </form>
+          <div className="card-btn-div">
+            <button onClick={this.props.submitNewCard} title="Adds your new card to the 'My Saved Questions' stack">Submit New Card!</button>
+            <button onClick={this.props.cancelNewCard} title="Cancels your new card creation">Cancel</button>
+          </div>
+        </div>
+      : null}
       </div>
     )
   }

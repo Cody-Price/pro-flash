@@ -9,3 +9,9 @@ body {
   background-size: cover;
   height: 100vh;
 }
+
+.new-card-btn {
+  position: absolute;
+  top: 92vh;
+  left: 32px;
+}

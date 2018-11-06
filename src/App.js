@@ -12,7 +12,8 @@ class App extends Component {
       currentQuestionsArray: [],
       currentCard: null,
       userQuestions: [],
-      displayAnswer: false
+      displayAnswer: false,
+      showForm: false
     }
   }
 
@@ -164,12 +165,12 @@ class App extends Component {
     setTimeout(function(){
       currentCard.classList.add('slide-saved');
     }, 1200);
-    setTimeout(function(){
-      currentCard.classList.remove('slide-saved');
-    }, 2000);
     setTimeout(() => {
       this.setCard();
     }, 1500);
+    setTimeout(function(){
+      currentCard.classList.remove('slide-saved');
+    }, 2000);
   }
 
   generateUserQuestions = () => {
@@ -202,6 +203,38 @@ class App extends Component {
     }
   }
 
+  createCard = () => {
+    this.setState({currentCard: null, showForm: true});
+  }
+
+  submitNewCard = (event) => {
+    let newPrompt = event.target.parentNode.previousSibling.childNodes[1].value;
+    let newAnswer = event.target.parentNode.previousSibling.childNodes[3].value;
+    let currentCard = event.target.parentNode.parentNode;
+    if (newPrompt !== '' && newAnswer !== '') {
+      let newQuestion = { id: new Date(), prompt: newPrompt, answer: newAnswer };
+      
+      this.state.userQuestions.push(newQuestion);
+      this.storeUserQuestions();
+      currentCard.classList.add('saved-answer');
+      setTimeout(function(){
+        currentCard.classList.remove('saved-answer');
+      }, 700);
+      setTimeout(function(){
+        currentCard.classList.add('slide-saved');
+      }, 1200);
+      setTimeout(() => {
+        this.setState({currentCard: null, showForm: false})
+      }, 1900);
+      setTimeout(function(){
+        currentCard.classList.remove('slide-saved');
+      }, 2000);
+    } 
+  }
+
+  cancelNewCard = () => {
+    this.setState({currentCard: null, showForm: false})
+  }
 
   render() {
     return (
@@ -218,7 +251,10 @@ class App extends Component {
         <Card currentCard={this.state.currentCard} setCard={this.setCard} 
         toggleAnswer={this.toggleAnswer} hideAnswer={this.hideAnswer} 
         incorrectAnswer={this.incorrectAnswer} correctAnswer={this.correctAnswer} 
-        saveCard={this.saveCard} nextCard={this.nextCard} deleteSavedCard={this.deleteSavedCard} />
+        saveCard={this.saveCard} nextCard={this.nextCard} deleteSavedCard={this.deleteSavedCard}
+        showForm={this.state.showForm} createNewCard={this.createNewCard} submitNewCard={this.submitNewCard}
+        cancelNewCard={this.cancelNewCard} />
+        <button onClick={this.createCard} className="new-card-btn">Create New Card!</button>
       </div>
     );
   }
