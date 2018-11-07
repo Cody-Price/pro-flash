@@ -36,75 +36,6 @@ class App extends Component {
     }
   }
 
-  generateAllQuestions = () => {
-    Object.keys(this.state.allQuestions).forEach((currentQuestionKey) => {
-      this.state.allQuestions[currentQuestionKey].forEach((currentQuestion) => {
-        this.state.currentQuestionsArray.push(currentQuestion);
-      })
-    })
-    this.setCard();
-  }
-
-  generateLocalStorage = () => {
-    this.state.currentQuestionsArray = [];
-    this.state.currentCard = null;
-    let localStorageQuestions = this.state.allQuestions.JSONquestions;
-    localStorageQuestions.forEach((currentQuestion) => {
-      this.state.currentQuestionsArray.push(currentQuestion);
-    })
-    this.setCard();
-  }
-
-  generateLinkedList = () => {
-    this.state.currentQuestionsArray = [];
-    this.state.currentCard = null;
-    let linkedListQuestions = this.state.allQuestions.linkedListQuestions;
-    linkedListQuestions.forEach((currentQuestion) => {
-      this.state.currentQuestionsArray.push(currentQuestion);
-    })
-    this.setCard();
-  }
-
-  generateBST = () => {
-    this.state.currentQuestionsArray = [];
-    this.state.currentCard = null;
-    let BSTQuestions = this.state.allQuestions.BSTQuestions;
-    BSTQuestions.forEach((currentQuestion) => {
-      this.state.currentQuestionsArray.push(currentQuestion);
-    })
-    this.setCard()
-  }
-
-  generateContext = () => {
-    this.state.currentQuestionsArray = [];
-    this.state.currentCard = null;
-    let contextQuestions = this.state.allQuestions.contextQuestions;
-    contextQuestions.forEach((currentQuestion) => {
-      this.state.currentQuestionsArray.push(currentQuestion);
-    })
-    this.setCard();
-  }
-
-  generateScope = () => {
-    this.state.currentQuestionsArray = [];
-    this.state.currentCard = null;
-    let scopeQuestions = this.state.allQuestions.scopeQuestions;
-    scopeQuestions.forEach((currentQuestion) => {
-      this.state.currentQuestionsArray.push(currentQuestion);
-    })
-    this.setCard();
-  }
-
-  generateArrayObject = () => {
-    this.state.currentQuestionsArray = [];
-    this.state.currentCard = null;
-    let arrayAndObjectQuestions = this.state.allQuestions.arrayAndObjectQuestions;
-    arrayAndObjectQuestions.forEach((currentQuestion) => {
-      this.state.currentQuestionsArray.push(currentQuestion);
-    })
-    this.setCard();
-  }
-
   nextCard = (event) => {
     let previousQuestion = this.state.currentCard;
     let nextQuestion = this.state.currentQuestionsArray.shift();
@@ -228,14 +159,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Buttons generateAllQuestions={this.generateAllQuestions}
-        generateLocalStorage={this.generateLocalStorage} 
-        generateLinkedList={this.generateLinkedList}
-        generateBST={this.generateBST}
-        generateContext={this.generateContext}
-        generateScope={this.generateScope}
-        generateArrayObject={this.generateArrayObject}
-        generateUserQuestions={this.generateUserQuestions} />
+        <Buttons setCard={this.setCard} allQuestions={this.state.allQuestions} 
+        currentQuestionsArray={this.state.currentQuestionsArray} currentCard={this.state.currentCard} />
         <Card currentCard={this.state.currentCard} setCard={this.setCard} hideAnswer={this.hideAnswer} 
         incorrectAnswer={this.incorrectAnswer} correctAnswer={this.correctAnswer} 
         saveCard={this.saveCard} nextCard={this.nextCard} deleteSavedCard={this.deleteSavedCard}
