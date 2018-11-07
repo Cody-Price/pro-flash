@@ -105,7 +105,7 @@ class App extends Component {
     this.setCard();
   }
 
-  nextCard = () => {
+  nextCard = (event) => {
     let previousQuestion = this.state.currentCard;
     let nextQuestion = this.state.currentQuestionsArray.shift();
     this.setState({currentCard: nextQuestion})
@@ -255,6 +255,7 @@ class App extends Component {
         showForm={this.state.showForm} createNewCard={this.createNewCard} submitNewCard={this.submitNewCard}
         cancelNewCard={this.cancelNewCard} />
         <button onClick={this.createCard} className="new-card-btn">Create New Card!</button>
+        {this.state.currentCard ? null : <p className="initial-prompt">PICK A CATEGORY!</p>}
       </div>
     );
   }

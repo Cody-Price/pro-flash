@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -14,4 +16,12 @@ body {
   position: absolute;
   top: 92vh;
   left: 32px;
+}
+
+.initial-prompt {
+  font-family: 'Patrick Hand', Arial, Sans-serif;
+  color: white;
+  font-size: 5rem;
+  margin: 200px auto 0 auto;
+  width: 600px;
 }
