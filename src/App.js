@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header.js';
 import Card from './Card.js';
 import Buttons from './Buttons.js';
-import './App.css';
+import './main.scss';
 
 class App extends Component {
   constructor() {
