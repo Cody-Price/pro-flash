@@ -117,18 +117,6 @@ class App extends Component {
     this.setState({currentCard: nextQuestion})
   }
 
-  toggleAnswer = (event) => {
-    if (this.state.displayAnswer) {
-      event.target.parentNode.previousSibling.classList.add('hidden');
-      event.target.parentNode.previousSibling.classList.remove('answer');
-      this.setState({displayAnswer: false})
-    } else if (!this.state.displayAnswer) {
-      event.target.parentNode.previousSibling.classList.remove('hidden');
-      event.target.parentNode.previousSibling.classList.add('answer');
-      this.setState({displayAnswer: true})
-    }
-  }
-
   correctAnswer = (event) => {
     let currentCard = event.target.parentNode.parentNode
     currentCard.classList.add('correct-answer');
@@ -248,8 +236,7 @@ class App extends Component {
         generateScope={this.generateScope}
         generateArrayObject={this.generateArrayObject}
         generateUserQuestions={this.generateUserQuestions} />
-        <Card currentCard={this.state.currentCard} setCard={this.setCard} 
-        toggleAnswer={this.toggleAnswer} hideAnswer={this.hideAnswer} 
+        <Card currentCard={this.state.currentCard} setCard={this.setCard} hideAnswer={this.hideAnswer} 
         incorrectAnswer={this.incorrectAnswer} correctAnswer={this.correctAnswer} 
         saveCard={this.saveCard} nextCard={this.nextCard} deleteSavedCard={this.deleteSavedCard}
         showForm={this.state.showForm} createNewCard={this.createNewCard} submitNewCard={this.submitNewCard}

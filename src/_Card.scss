@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+@import url('_variables.scss');
 
 .card {
   display: flex;
@@ -158,9 +159,10 @@ form {
   margin: 13px 0 0 0;
 }
 
-#prompt-form, #answer-form {
+#prompt-form, 
+#answer-form {
   display: block;
-  margin: -2px 5px 21px 5px;
+  margin: 2px 5px 21px 5px;
   width: 95%;
   border: solid $color-lead 2px;
   height: 22px;
