@@ -141,42 +141,42 @@
   transition: color .4s linear;
   transition: transform .4s linear;
   line-height: 110%;
-}
 
-.card-btn:hover {
-  transform: scale(1.1);
-  transition-duration: 0.2s;
-  box-shadow: 2px 2px 2px 1px grey;
+  &:hover {
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+    box-shadow: 2px 2px 2px 1px grey;
+  }
+
 }
 
 .correct-btn {
   border-color: rgb(0, 255, 0);
-}
 
-.correct-btn:hover {
-  background-color: rgb(0, 255, 0);
-  color: black;
+  &:hover {
+    background-color: rgb(0, 255, 0);
+    color: black;
+  }
 }
 
 .incorrect-btn {
   border-color: red;
-}
 
-.incorrect-btn:hover {
-  background-color: red;
-  color: white;
+  &:hover {
+    background-color: red;
+    color: white;
+  }
 }
 
 .save-card-btn {
   border-color: rgb(0, 217, 255);
+
+  &:hover {
+    background-color: rgb(0, 217, 255);
+    color: white;
+  }
 }
 
-.save-card-btn:hover {
-  background-color: rgb(0, 217, 255);
-  color: white;
-}
-
-  
 .splash {
   transition: .3s;
   font-size: 5rem;
@@ -188,10 +188,10 @@
 .delete-card-btn {
   border-color: black;
   color: black;
-}
 
-.delete-card-btn:hover {
-  background-color: black;
+  &:hover {
+    background-color: black;
+  }
 }
 
 .delete {
