@@ -5,8 +5,8 @@ This is a flashcard application designed for studying various topics related to 
 ## To install this application: 
   - clone the repo
   - cd into the directory
-  --- npm install
-  --- npm start
+  ```npm install
+  ```npm start
 
 ![image](https://user-images.githubusercontent.com/40974490/48150418-df4cb080-e27b-11e8-9780-2d1008322081.png)
 ![image](https://user-images.githubusercontent.com/40974490/48150507-1de26b00-e27c-11e8-8599-2b199790fb9c.png)
