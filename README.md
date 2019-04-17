@@ -5,6 +5,7 @@ This is a flashcard application designed for studying various topics related to 
 #### Demo: 
 
 <a href="https://imgflip.com/gif/2ytk23"><img src="https://i.imgflip.com/2ytk23.gif" title="made at imgflip.com"/></a>
+<a href="https://imgflip.com/gif/2ytkif"><img src="https://i.imgflip.com/2ytkif.gif" title="made at imgflip.com"/></a>
 
 ## To install this application: 
   - clone the repo
