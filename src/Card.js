@@ -3,8 +3,6 @@ import './App.js';
 import './main.scss';
 
 export default class Card extends Component {
-
-  
   render() {
     return (
       <div className="card">

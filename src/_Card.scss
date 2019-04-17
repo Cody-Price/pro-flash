@@ -21,6 +21,34 @@
   line-height: 1.55;
 }
 
+@keyframes slideRight {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    left: -100vw;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+.slide-right {
+  animation: slideRight 1s;
+}
+
+.slide-in-left {
+  animation: slideInLeft 1s;
+}
+
 .answer {
   display: block;
   font-size: 1.3rem;
@@ -30,7 +58,7 @@
 
 .current-card, 
 .form-div {
-  transition: 0.3s;
+  transition-duration: 0.3s;
   font-family: 'Patrick Hand', Arial, Sans-Serif;
   background-image: url('./index-img.png');
   background-size: contain;

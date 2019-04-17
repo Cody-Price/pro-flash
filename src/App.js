@@ -17,11 +17,6 @@ class App extends Component {
     }
   }
 
-  storeUserQuestions = () => {
-    let stringyUserQuestions = JSON.stringify(this.state.userQuestions);
-    localStorage.setItem('userQuestions', stringyUserQuestions);
-  }
-
   componentDidMount = () => {
     fetch('https://memoize-datasets.herokuapp.com/api/v1/priceQuestions')
       .then(response => response.json())
@@ -36,6 +31,11 @@ class App extends Component {
     }
   }
 
+  storeUserQuestions = () => {
+    let stringyUserQuestions = JSON.stringify(this.state.userQuestions);
+    localStorage.setItem('userQuestions', stringyUserQuestions);
+  }
+  
   generateAllQuestions = () => {
     Object.keys(this.state.allQuestions).forEach((currentQuestionKey) => {
       this.state.allQuestions[currentQuestionKey].forEach((currentQuestion) => {
@@ -94,7 +94,7 @@ class App extends Component {
     })
     this.setCard();
   }
-
+  
   generateArrayObject = () => {
     this.state.currentQuestionsArray = [];
     this.state.currentCard = null;
@@ -104,12 +104,32 @@ class App extends Component {
     })
     this.setCard();
   }
+  
+  correctAnswer = (event) => {
+    let currentCard = event.target.parentNode.parentNode
+    currentCard.classList.add('correct-answer');
+    setTimeout(function(){
+      currentCard.classList.remove('correct-answer');
+    }, 1000);
+    setTimeout(() => {
+      this.setCard();
+    }, 1200);
+  }
 
   nextCard = (event) => {
+    let currentCard = event.target.parentNode.parentNode
     let previousQuestion = this.state.currentCard;
     let nextQuestion = this.state.currentQuestionsArray.shift();
-    this.setState({currentCard: nextQuestion})
     this.state.currentQuestionsArray.push(previousQuestion);
+    currentCard.classList.add('slide-right')
+    setTimeout(() => {
+      this.setState({currentCard: nextQuestion})
+      currentCard.classList.remove('slide-right')
+      currentCard.classList.add('slide-in-left')
+    }, 1000);
+    setTimeout(() => {
+      currentCard.classList.remove('slide-in-left')
+    }, 2000);
   }
 
   setCard = () => {
@@ -129,16 +149,6 @@ class App extends Component {
     }
   }
 
-  correctAnswer = (event) => {
-    let currentCard = event.target.parentNode.parentNode
-    currentCard.classList.add('correct-answer');
-    setTimeout(function(){
-      currentCard.classList.remove('correct-answer');
-    }, 1000);
-    setTimeout(() => {
-      this.setCard();
-    }, 1200);
-  }
 
   incorrectAnswer = (event) => {
     let currentCard = event.target.parentNode.parentNode
