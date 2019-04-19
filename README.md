@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Cody-Price/pro-flash.svg?branch=master)](https://travis-ci.org/Cody-Price/pro-flash)
+![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
 
 # Pro-Flash
 
