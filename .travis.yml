@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '11'
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: r2t1hYq5gLrN8SxkmfeQx2Kd+V2pQX/Tdc/haMj02KyvJNsCeo0gmCNV8A0Ztll+b3bgir2yrEfvAyE8v/B/8qrBctzdLcjylDiFsxtj8hD986M5e+2tUzDp1TjQeev15+K6dg/nelTxT+mQzZF89EWJT1cJH3lhcnC/lGCjISfI+EPW2tsGs2AgMGjDO6dzedL7fnxJTUayjJBqQeumHnEKt8XgeUkc0DkBZD8maRf9ae6jngzgAyx5ZDcgeClCW7rmvzQOQmwIPoblsL9gS8TNgmUT58ds+W19M5GOGZ3vqx3K+fgtaaY1gP0dBwnqbdmb30pd38NhRIDuPibn07VQDTqeKwx8xtcdKg3deilUi7uGNa+6WjTFxSVVNur65ZJBLoazZ7QUrfSuNvM3vIkCB8QmAxfhbJtQ4b7rYAaWNIEiS66bzoCmnoJqribePW5DSOAx5d9LWw83Tsx9CmfGU3faOM+C0MMTJlwf8DYkJong5RnUtMx+VaW42WNluXE5iiCiMId1ac0FNtD+3jCfKUspNAeiLPVt1sWQrUgR2dl0SEf7GZKs/icKBvyo+eDl9TCzgegyMqrfMloNut/jBy4xdZW7eEwU2nkVcSNJc8RJU6rfo2p6d3yjzBSRN5wi+74dW9hUVjvay7+iydYmPiH44VAs13BRYPCxH8A=
+  app: pro-flash
+  on:
+    repo: Cody-Price/pro-flash
+scripts:
+  start: node server.js
+  test: NODE_ENV=test jest --exit

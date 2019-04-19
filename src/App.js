@@ -180,7 +180,11 @@ class App extends Component {
     }, 1500);
     setTimeout(function(){
       currentCard.classList.remove('slide-saved');
+      currentCard.classList.add('slide-in-left')
     }, 2000);
+    setTimeout(() => {
+      currentCard.classList.remove('slide-in-left')
+    }, 3000);
   }
 
   generateUserQuestions = () => {
