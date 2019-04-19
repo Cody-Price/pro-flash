@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Cody-Price/pro-flash.svg?branch=master)](https://travis-ci.org/Cody-Price/pro-flash)
+
 # Pro-Flash
 
 This is a flashcard application designed for studying various topics related to programming concepts as well as the ability to create your own cards and save them to your own browsers local storage.
