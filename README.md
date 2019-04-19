@@ -53,7 +53,7 @@ This application is not yet in the testing phase, however if you would like to c
 
 ### Deployment
 
-This application is not yet in the deployment phase, however if you would like to contribute, please see the <a href="#contributing">Contributing</a> section.
+This application is currently deployed via [TravisCI](https://travis-ci.org/) to [Heroku](https://www.heroku.com/) and is located at [https://pro-flash.herokuapp.com/](https://pro-flash.herokuapp.com/)
 
 ### Built With
 
